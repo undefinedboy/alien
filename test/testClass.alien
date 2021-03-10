@@ -1,0 +1,40 @@
+class fuck {
+    func init(a, b, c, d) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.d = d;
+    }
+    func fib(n) {
+        if (n <= 2)  { return 1; }
+        return this.fib(n - 1) + this.fib(n - 2);
+    }
+}
+
+var global = 1;
+
+func f() {
+    var a = fuck(1,2,3,4);
+    var b = fuck(1,2,3,4);
+    var c = fuck(1,2,3,4);
+    var d = fuck(1,2,3,4);
+    var e = fuck(1,2,3,4);
+    var f = fuck(1,2,3,4);
+    var g = fuck(1,2,3,4);
+    var h = fuck(1,2,3,4);
+    var i = fuck(1,2,4,5);
+    var q = fuck(1,2,3,4);
+}
+
+func main() {
+    f();
+    var a = fuck(2, 3, 4, 5);
+    print a.a;
+    print a.b;
+    print a.c;
+    print a.d;
+    print a.fib(5);
+    a.f = "af";
+    print a.f;
+    print global;
+}

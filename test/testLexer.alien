@@ -1,0 +1,9 @@
+func main() {
+    var a;
+    while () {
+        return;
+    }
+    print "abcc"
+}
+var a = print "asdc"
+if (a and b) {}

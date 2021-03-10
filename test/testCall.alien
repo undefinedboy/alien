@@ -1,0 +1,37 @@
+func a() {
+    print "call a()";
+}
+func b() {
+    print "call b()";
+    a();
+}
+func c() {
+    print "call c()";
+    b();
+}
+
+func fib(n) {
+    if (n <= 2) {
+        return 1;
+    }
+    return fib(n - 1) + fib(n - 2);
+}
+
+func t() {
+    return 1;
+}
+
+func test() {
+    var a = 0;
+    for (var i = 0; i < 10; i = i + 1) {
+        a = a + i;
+    }
+    var g = t();
+    return a + g;
+}
+
+func main() {
+    c();
+    print test();
+    print fib(30);
+}
