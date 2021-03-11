@@ -33,7 +33,7 @@ class Vm {
 public:
   InterpretResult interpret(std::string_view source);
   void addObj(Obj* obj);
-
+  ~Vm();
 private:
   InterpretResult run();
   bool callValue(const Value& callee, int argCount);

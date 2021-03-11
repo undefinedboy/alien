@@ -408,4 +408,10 @@ void Vm::markRoots() {
   }
 }
 
+Vm::~Vm() {
+  for (const auto& obj : objs_) {
+    delete obj;
+  }
+}
+
 }
