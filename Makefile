@@ -1,5 +1,6 @@
 CC := clang++
 CXXFLAGS := -std=c++17 $(OPTIMIZE) -Wall
+TRACE := -DTRACE_EXECUTION -DDEBUG_GC
 INCLUDES := -Iinclude
 SOURCE_DIR := src
 OBJECTS_DIR := objs
@@ -16,7 +17,7 @@ jsongen: $(filter-out $(OBJECTS_DIR)/main.o, $(OBJECTS))
 	$(CC) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
 	
 $(OBJECTS_DIR)/%.o: $(SOURCE_DIR)/%.cpp
-	$(CC) $(CXXFLAGS) $(INCLUDES) -c $^ -o $@
+	$(CC) $(CXXFLAGS) $(INCLUDES) $(TRACE) -c $^ -o $@
 
 .PYONY clean:
 	rm $(OBJECTS_DIR)/*.o alien jsongen
