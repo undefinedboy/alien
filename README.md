@@ -22,7 +22,7 @@ cd alien && make
 
 ### Regex
 
-```latex
+```regex
 NUMBER = DIGIT+(\.DIGIT+)?
 STRING = "anything"
 IDENTIFIER = ALPHA(ALPHA|DIGIT)*
@@ -32,17 +32,17 @@ DIGIT = [0-9]
 
 ### Context-free grammar
 
-```latex
-program          = declaration* EOF
+```ebnf
+program     = declaration* EOF
 declaration = classDecl | funcDecl | varDecl
-classDecl        = "class" IDENTIFIER "{" funcDecl* "}"
-funcDecl        = "func" IDENTIFIER "(" parameters? ")" block
-varDecl         = "var" IDENTIFIER ( "=" expression )? ";"
-parameters    = IDENTIFIER ( "," IDENTIFIER )*
-block                = "{" ( varDecl | statement )* "}"
-expression    = assignment
-assignment    = ( call "." )? IDENTIFIER "=" assignment
-                        | logicOr
+classDecl   = "class" IDENTIFIER "{" funcDecl* "}"
+funcDecl    = "func" IDENTIFIER "(" parameters? ")" block
+varDecl     = "var" IDENTIFIER ( "=" expression )? ";"
+parameters  = IDENTIFIER ( "," IDENTIFIER )*
+block       = "{" ( varDecl | statement )* "}"
+expression  = assignment
+assignment  = ( call "." )? IDENTIFIER "=" assignment
+            | logicOr
 logicOr     = logicAnd ( "or" logicAnd )* 
 logicAnd    = equality ( "and" equality )* 
 equality    = comparison ( ( "!=" | "==" ) comparison )* 
@@ -53,20 +53,18 @@ unary       = ( "!" | "-" ) unary | call
 call        = primary ( "(" arguments? ")" | "." IDENTIFIER )* 
 primary     = "true" | "false" | "nil" | "this"
             | NUMBER | STRING | IDENTIFIER | "(" expression ")"
-statement      = exprStmt | ifStmt | whileStmt | forStmt | printStmt
-                        | returnStmt
-exprStmt        = expression ";"
-ifStmt            = "if" "(" expression ")" block ("else" block)?
-whileStmt        = "while" "(" expression ")" block
-forStmt            = "for" "(" ( varDecl | exprStmt | ";" )
+statement   = exprStmt | ifStmt | whileStmt | forStmt | printStmt
+            | returnStmt
+exprStmt    = expression ";"
+ifStmt      = "if" "(" expression ")" block ("else" block)?
+whileStmt   = "while" "(" expression ")" block
+forStmt     = "for" "(" ( varDecl | exprStmt | ";" )
                           expression? ";"
                           expression? 
                      ")" block
-printStmt        = "print" expression ";"
-returnStmt     = "return" expression? ";"
-
-
-arguments        = expression ("," expression)*
+printStmt   = "print" expression ";"
+returnStmt  = "return" expression? ";"
+arguments  = expression ("," expression)*
 ```
 
 ### Optimizer
