@@ -23,11 +23,11 @@ cd alien && make
 ### Regex
 
 ```regex
-NUMBER = DIGIT+(\.DIGIT+)?
-STRING = "anything"
+NUMBER     = DIGIT+(\.DIGIT+)?
+STRING     = "anything"
 IDENTIFIER = ALPHA(ALPHA|DIGIT)*
-ALPHA = [a-zA-Z_]
-DIGIT = [0-9]
+ALPHA      = [a-zA-Z_]
+DIGIT      = [0-9]
 ```
 
 ### Context-free grammar
@@ -64,7 +64,7 @@ forStmt     = "for" "(" ( varDecl | exprStmt | ";" )
                      ")" block
 printStmt   = "print" expression ";"
 returnStmt  = "return" expression? ";"
-arguments  = expression ("," expression)*
+arguments   = expression ("," expression)*
 ```
 
 ### Optimizer
