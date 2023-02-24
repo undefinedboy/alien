@@ -1,0 +1,17 @@
+class T {
+  func init(a, b, c) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  }
+  func method() {
+    print this.a;
+    print this.b;
+    print this.c;
+  }
+}
+
+func main() {
+  var instance = T(2, 3, 4);
+  instance.method();
+}

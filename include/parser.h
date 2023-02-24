@@ -5,9 +5,9 @@
 #ifndef ALIEN_PARSER_H
 #define ALIEN_PARSER_H
 
-#include "ast.h"
-#include "lexer.h"
-#include "typedef.h"
+#include <ast.h>
+#include <lexer.h>
+#include <typedef.h>
 
 #include <memory>
 #include <vector>

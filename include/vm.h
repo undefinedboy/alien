@@ -5,8 +5,8 @@
 #ifndef ALIEN_VM_H
 #define ALIEN_VM_H
 
-#include "value.h"
-#include "object.h"
+#include <value.h>
+#include <object.h>
 
 #include <string>
 #include <list>

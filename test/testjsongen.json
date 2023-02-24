@@ -1,0 +1,228 @@
+{
+    "Program": [
+        {
+            "Func": {
+                "body": {
+                    "Block": [
+                        {
+                            "Var": {
+                                "initializer": {
+                                    "Number": 1.0
+                                },
+                                "name": "e"
+                            }
+                        },
+                        {
+                            "Var": {
+                                "name": "f"
+                            }
+                        }
+                    ]
+                },
+                "name": "a",
+                "parameters": [
+                    "b",
+                    "c",
+                    "d"
+                ]
+            }
+        },
+        {
+            "Func": {
+                "body": {
+                    "Block": [
+                        {
+                            "Var": {
+                                "name": "d"
+                            }
+                        },
+                        {
+                            "Exprstmt": {
+                                "Assign": {
+                                    "name": "d",
+                                    "value": {
+                                        "Binary": {
+                                            "left": {
+                                                "Number": 2.0
+                                            },
+                                            "operator": "+",
+                                            "right": {
+                                                "Number": 2.0
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "If": {
+                                "Block": [
+                                    {
+                                        "Var": {
+                                            "initializer": {
+                                                "Number": 3.0
+                                            },
+                                            "name": "c"
+                                        }
+                                    }
+                                ],
+                                "Variable": {
+                                    "name": "d"
+                                }
+                            }
+                        },
+                        {
+                            "While": {
+                                "Block": [
+                                    {
+                                        "Var": {
+                                            "initializer": {
+                                                "Number": 4.0
+                                            },
+                                            "name": "g"
+                                        }
+                                    }
+                                ],
+                                "Variable": {
+                                    "name": "d"
+                                }
+                            }
+                        },
+                        {
+                            "Return": {}
+                        },
+                        {
+                            "Exprstmt": {
+                                "Call": {
+                                    "arguments": [
+                                        {
+                                            "Unary": {
+                                                "operator": "-",
+                                                "right": {
+                                                    "Variable": {
+                                                        "name": "x"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "Variable": {
+                                                "name": "x"
+                                            }
+                                        },
+                                        {
+                                            "Variable": {
+                                                "name": "x"
+                                            }
+                                        }
+                                    ],
+                                    "callee": {
+                                        "Variable": {
+                                            "name": "a"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Exprstmt": {
+                                "Assign": {
+                                    "name": "d",
+                                    "value": {
+                                        "Grouping": {
+                                            "Number": 1.0
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Exprstmt": {
+                                "Assign": {
+                                    "name": "d",
+                                    "value": {
+                                        "Literal": "nil"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Exprstmt": {
+                                "Assign": {
+                                    "name": "d",
+                                    "value": {
+                                        "Literal": "true"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Exprstmt": {
+                                "Assign": {
+                                    "name": "d",
+                                    "value": {
+                                        "Literal": "false"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Exprstmt": {
+                                "Assign": {
+                                    "name": "d",
+                                    "value": {
+                                        "Binary": {
+                                            "left": {
+                                                "Variable": {
+                                                    "name": "a"
+                                                }
+                                            },
+                                            "operator": "and",
+                                            "right": {
+                                                "Binary": {
+                                                    "left": {
+                                                        "Variable": {
+                                                            "name": "b"
+                                                        }
+                                                    },
+                                                    "operator": "+",
+                                                    "right": {
+                                                        "Binary": {
+                                                            "left": {
+                                                                "Variable": {
+                                                                    "name": "c"
+                                                                }
+                                                            },
+                                                            "operator": "*",
+                                                            "right": {
+                                                                "Variable": {
+                                                                    "name": "d"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Exprstmt": {
+                                "Assign": {
+                                    "name": "d",
+                                    "value": {
+                                        "String": "accept"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "name": "x",
+                "parameters": []
+            }
+        }
+    ]
+}

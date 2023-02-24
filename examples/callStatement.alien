@@ -1,0 +1,12 @@
+func f1() {
+  f2();
+  print "in func f1";
+}
+
+func f2() {
+  print "in func f2";
+}
+
+func main() {
+  f1(); 
+}

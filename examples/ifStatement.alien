@@ -1,0 +1,7 @@
+func main() {
+  if (1 < 2) {
+    print "1 is less than 2";
+  } else {
+    print "1 is larger than 2";
+  }
+}

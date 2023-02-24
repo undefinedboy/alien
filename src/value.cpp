@@ -2,8 +2,8 @@
 // Created by Alan Huang on 3/2/21.
 //
 
-#include "value.h"
-#include "object.h"
+#include <value.h>
+#include <object.h>
 
 #include <variant>
 

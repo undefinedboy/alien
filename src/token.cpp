@@ -2,7 +2,7 @@
 // Created by Alan Huang on 2/22/21.
 //
 
-#include "token.h"
+#include <token.h>
 
 #include <string_view>
 

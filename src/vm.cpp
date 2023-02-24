@@ -2,17 +2,18 @@
 // Created by Alan Huang on 2/27/21.
 //
 
-#include "value.h"
-#include "object.h"
-#include "chunk.h"
-#include "parser.h"
-#include "compiler.h"
-#include "vm.h"
-#include "common.h"
+#include <value.h>
+#include <object.h>
+#include <chunk.h>
+#include <parser.h>
+#include <compiler.h>
+#include <vm.h>
+#include <common.h>
 
 #include <iostream>
 #include <string_view>
 #include <cstdint>
+#include <cassert>
 
 namespace alien {
 

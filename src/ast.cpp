@@ -2,7 +2,7 @@
 // Created by Alan Huang on 2/23/21.
 //
 
-#include "ast.h"
+#include <ast.h>
 
 #include <cassert>
 

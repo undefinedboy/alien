@@ -5,10 +5,10 @@
 #ifndef ALIEN_COMPILER_H
 #define ALIEN_COMPILER_H
 
-#include "ast.h"
-#include "vm.h"
-#include "chunk.h"
-#include "object.h"
+#include <ast.h>
+#include <vm.h>
+#include <chunk.h>
+#include <object.h>
 
 #include <string_view>
 #include <unordered_map>

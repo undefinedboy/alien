@@ -1,0 +1,23 @@
+func a(b, c, d) {
+    var e = 1;
+    var f;
+}
+
+func x() {
+    var d;
+    d = 2 + 2;
+    if (d) {
+        var c = 3;
+    }
+    while (d) {
+        var g = 4;
+    }
+    return;
+    a(-x,x,x);
+    d = (1);
+    d = nil;
+    d = true;
+    d = false;
+    d = a and b + c * d;
+    d = "accept";
+}

@@ -2,8 +2,8 @@
 // Created by Alan Huang on 2021-02-20.
 //
 
-#include "lexer.h"
-#include "token.h"
+#include <lexer.h>
+#include <token.h>
 
 #include <string_view>
 #include <unordered_map>

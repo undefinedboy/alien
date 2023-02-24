@@ -5,7 +5,7 @@
 #ifndef ALIEN_LEXER_H
 #define ALIEN_LEXER_H
 
-#include "token.h"
+#include <token.h>
 
 #include <string_view>
 #include <unordered_map>

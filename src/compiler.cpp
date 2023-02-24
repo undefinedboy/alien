@@ -2,14 +2,16 @@
 // Created by Alan Huang on 2/27/21.
 //
 
-#include "compiler.h"
-#include "vm.h"
-#include "ast.h"
-#include "value.h"
-#include "object.h"
+#include <compiler.h>
+#include <vm.h>
+#include <ast.h>
+#include <value.h>
+#include <object.h>
 
 #include <vector>
 #include <string_view>
+
+#include <cassert>
 
 namespace alien {
 

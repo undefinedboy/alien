@@ -5,7 +5,7 @@
 #ifndef ALIEN_CHUNK_H
 #define ALIEN_CHUNK_H
 
-#include "value.h"
+#include <value.h>
 
 #include <vector>
 #include <ostream>

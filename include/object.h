@@ -5,9 +5,9 @@
 #ifndef ALIEN_OBJECT_H
 #define ALIEN_OBJECT_H
 
-#include "value.h"
-#include "chunk.h"
-#include "common.h"
+#include <value.h>
+#include <chunk.h>
+#include <common.h>
 
 #include <string>
 #include <ostream>

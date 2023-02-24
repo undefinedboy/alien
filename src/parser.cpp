@@ -2,9 +2,9 @@
 // Created by Alan Huang on 2/23/21.
 //
 
-#include "token.h"
-#include "parser.h"
-#include "typedef.h"
+#include <token.h>
+#include <parser.h>
+#include <typedef.h>
 
 #include <vector>
 #include <utility>
@@ -217,7 +217,7 @@ ExprPtr Parser::parseAssign() {
 ExprPtr Parser::parseOr() {
   auto expr = parseAnd();
   while (match(TOKEN_OR)) {
-    auto orExpr = std::make_unique<Logical>();
+    auto orExpr = std::make_unique<Binary>();
     orExpr->op = previous_;
     orExpr->left = std::move(expr);
     orExpr->right = parseAnd();
@@ -229,7 +229,7 @@ ExprPtr Parser::parseOr() {
 ExprPtr Parser::parseAnd() {
   auto expr = parseEquality();
   while (match(TOKEN_AND)) {
-    auto andExpr = std::make_unique<Logical>();
+    auto andExpr = std::make_unique<Binary>();
     andExpr->op = previous_;
     andExpr->left = std::move(expr);
     andExpr->right = parseEquality();

@@ -5,8 +5,8 @@
 #ifndef ALIEN_AST_H
 #define ALIEN_AST_H
 
-#include "token.h"
-#include "typedef.h"
+#include <token.h>
+#include <typedef.h>
 
 #include <iostream>
 #include <memory>
