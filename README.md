@@ -34,10 +34,11 @@ DIGIT      = [0-9]
 
 ```ebnf
 program     = declaration* EOF
-declaration = classDecl | funcDecl | varDecl
+declaration = classDecl | funcDecl | varDecl | constDecl
 classDecl   = "class" IDENTIFIER "{" funcDecl* "}"
 funcDecl    = "func" IDENTIFIER "(" parameters? ")" block
 varDecl     = "var" IDENTIFIER ( "=" expression )? ";"
+constDecl   = "const" IDENTIFIER "=" expression ";"
 parameters  = IDENTIFIER ( "," IDENTIFIER )*
 block       = "{" ( varDecl | statement )* "}"
 expression  = assignment
