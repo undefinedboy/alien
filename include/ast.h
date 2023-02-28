@@ -17,6 +17,7 @@ namespace alien {
 class ClassDecl;
 class FuncDecl;
 class VarDecl;
+class ConstDecl;
 class BlockStmt;
 class IfStmt;
 class WhileStmt;
@@ -233,6 +234,7 @@ public:
   virtual void visit(ClassDecl &decl) = 0;
   virtual void visit(FuncDecl &decl) = 0;
   virtual void visit(VarDecl &decl) = 0;
+  virtual void visit(ConstDecl &decl) = 0;
   virtual void visit(BlockStmt &stmt) = 0;
   virtual void visit(IfStmt &stmt) = 0;
   virtual void visit(WhileStmt &stmt) = 0;
@@ -248,7 +250,6 @@ public:
   void accept(StmtVisitor &visitor) override {
     visitor.visit(*this);
   }
-
   void trace(std::ostream &os) const override;
 
   Token name;
@@ -260,7 +261,6 @@ public:
   void accept(StmtVisitor &visitor) override {
     visitor.visit(*this);
   }
-
   void trace(std::ostream &os) const override;
 
   Token name;
@@ -273,13 +273,22 @@ public:
   void accept(StmtVisitor &visitor) override {
     visitor.visit(*this);
   }
-
   void trace(std::ostream &os) const override;
 
   Token name;
   ExprPtr initializer;
 };
 
+class ConstDecl : public Stmt {
+public:
+  void accept(StmtVisitor &visitor) override {
+    visitor.visit(*this);
+  }
+  void trace(std::ostream &os) const override;
+
+  Token name;
+  ExprPtr initializer;
+};
 
 class BlockStmt : public Stmt {
 public:

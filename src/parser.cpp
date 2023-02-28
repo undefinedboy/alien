@@ -29,8 +29,10 @@ StmtPtr Parser::parseDecl() {
     decl = parseClassDecl();
   } else if (match(TOKEN_FUNC)) {
     decl = parseFuncDecl(TYPE_FUNCTION);
-  } else if (match(TOKEN_VAR)){
+  } else if (match(TOKEN_VAR)) {
     decl = parseVarDecl();
+  } else if (match(TOKEN_CONST)) {
+    decl = parseConstDecl();
   }
   if (panicMode_) {
     synchronize();
@@ -81,6 +83,15 @@ StmtPtr Parser::parseVarDecl() {
   return varDecl;
 }
 
+StmtPtr Parser::parseConstDecl() {
+  auto constDecl = std::make_unique<ConstDecl>();
+  consume(TOKEN_IDENTIFIER, "Expect variable name.");
+  constDecl->name = previous_;
+  consume(TOKEN_EQUAL, "Expect '=' after constant name.");
+  constDecl->initializer = parseExpr();
+  consume(TOKEN_SEMICOLON, "Expect ';' after constant define.");
+  return constDecl;
+}
 
 StmtPtr Parser::parseStmt() {
   if (match(TOKEN_IF)) {
@@ -178,6 +189,8 @@ StmtPtr Parser::parseBlock() {
   while (!check(TOKEN_RIGHT_BRACE) && !check(TOKEN_EOF)) {
     if (match(TOKEN_VAR)) {
       block->stmts.push_back(parseVarDecl());
+    } else if (match(TOKEN_CONST)) {
+      block->stmts.push_back(parseConstDecl());
     } else {
       block->stmts.push_back(parseStmt());
     }
@@ -217,7 +230,7 @@ ExprPtr Parser::parseAssign() {
 ExprPtr Parser::parseOr() {
   auto expr = parseAnd();
   while (match(TOKEN_OR)) {
-    auto orExpr = std::make_unique<Binary>();
+    auto orExpr = std::make_unique<Logical>();
     orExpr->op = previous_;
     orExpr->left = std::move(expr);
     orExpr->right = parseAnd();
@@ -229,7 +242,7 @@ ExprPtr Parser::parseOr() {
 ExprPtr Parser::parseAnd() {
   auto expr = parseEquality();
   while (match(TOKEN_AND)) {
-    auto andExpr = std::make_unique<Binary>();
+    auto andExpr = std::make_unique<Logical>();
     andExpr->op = previous_;
     andExpr->left = std::move(expr);
     andExpr->right = parseEquality();

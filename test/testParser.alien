@@ -9,5 +9,6 @@ func main() {
     return a;
     a.b.c().g = c;
     1+1-2*43;
-    !a;
+    a!=a;
+    const b = 1;
 }

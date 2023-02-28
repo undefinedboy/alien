@@ -70,6 +70,16 @@ void JsonGenerator::visit(VarDecl &decl) {
     }
 }
 
+void JsonGenerator::visit(ConstDecl &decl) {
+    (*jCurrent_)["Const"] = nlohmann::json::object();
+    (*jCurrent_)["Const"]["name"] = decl.name.lexeme_;
+    (*jCurrent_)["Const"]["initializer"] = nlohmann::json::object();
+    push();
+    jCurrent_ = &(*jCurrent_)["Const"]["initializer"];
+    decl.initializer->accept(*this);
+    pop();
+}
+
 void JsonGenerator::visit(BlockStmt &stmts) {
     visit_begin(Block, array);
     for (const auto& stmt : stmts.stmts) {
@@ -80,18 +90,28 @@ void JsonGenerator::visit(BlockStmt &stmts) {
 
 void JsonGenerator::visit(IfStmt &stmt) {
     visit_begin(If, object);
+    visit_begin(condition, object);
     stmt.condition->accept(*this);
+    visit_end();
+    visit_begin(then_branch, object);
     stmt.thenBranch->accept(*this);
+    visit_end();
     if (stmt.elseBranch) {
+        visit_begin(else_branch, object);
         stmt.elseBranch->accept(*this);
+        visit_end();
     }
     visit_end();
 }
 
 void JsonGenerator::visit(WhileStmt &stmt) {
     visit_begin(While, object);
+    visit_begin(condition, object);
     stmt.condition->accept(*this);
+    visit_end();
+    visit_begin(body, object);
     stmt.body->accept(*this);
+    visit_end();
     visit_end();
 }
 
@@ -106,7 +126,9 @@ void JsonGenerator::visit(PrintStmt &stmt) {
 void JsonGenerator::visit(ReturnStmt &stmt) {
     visit_begin(Return, object);
     if (stmt.expr) {
+        visit_begin(value, object);
         stmt.expr->accept(*this);
+        visit_end();
     }
     visit_end();
 }

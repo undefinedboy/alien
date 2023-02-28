@@ -20,6 +20,7 @@ std::unordered_map<std::string_view, TokenType> Lexer::keywords_{
     { "func",   TOKEN_FUNC },
     { "class",  TOKEN_CLASS },
     { "var",    TOKEN_VAR},
+    { "const",  TOKEN_CONST},
     { "true",   TOKEN_TRUE },
     { "false",  TOKEN_FALSE },
     { "nil",    TOKEN_NIL },

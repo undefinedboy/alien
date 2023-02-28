@@ -1,0 +1,8 @@
+objs
+.cache
+.DS_Store
+alien
+jsongen
+compile_commands.json
+optimizer/target
+optimizer/Cargo.lock

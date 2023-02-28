@@ -30,6 +30,7 @@ private:
   StmtPtr parseClassDecl();
   StmtPtr parseFuncDecl(FunctionType type);
   StmtPtr parseVarDecl();
+  StmtPtr parseConstDecl();
   StmtPtr parseStmt();
   StmtPtr parseIfStmt();
   StmtPtr parseWhileStmt();

@@ -39,6 +39,13 @@ void VarDecl::trace(std::ostream &os) const {
   os << ";";
 }
 
+void ConstDecl::trace(std::ostream &os) const {
+  os << "const " << name.lexeme_;
+  os << " = ";
+  initializer->trace(os);
+  os << ";";
+}
+
 void BlockStmt::trace(std::ostream &os) const {
   for (const auto& stmt : stmts) {
     stmt->trace(os);

@@ -56,35 +56,60 @@
                         },
                         {
                             "If": {
-                                "Block": [
-                                    {
-                                        "Var": {
-                                            "initializer": {
-                                                "Number": 3.0
-                                            },
-                                            "name": "c"
-                                        }
+                                "condition": {
+                                    "Variable": {
+                                        "name": "d"
                                     }
-                                ],
-                                "Variable": {
-                                    "name": "d"
+                                },
+                                "then_branch": {
+                                    "Block": [
+                                        {
+                                            "Var": {
+                                                "initializer": {
+                                                    "Number": 3.0
+                                                },
+                                                "name": "c"
+                                            }
+                                        }
+                                    ]
                                 }
                             }
                         },
                         {
                             "While": {
-                                "Block": [
-                                    {
-                                        "Var": {
-                                            "initializer": {
-                                                "Number": 4.0
-                                            },
-                                            "name": "g"
+                                "body": {
+                                    "Block": [
+                                        {
+                                            "Var": {
+                                                "initializer": {
+                                                    "Number": 4.0
+                                                },
+                                                "name": "g"
+                                            }
                                         }
+                                    ]
+                                },
+                                "condition": {
+                                    "Variable": {
+                                        "name": "d"
                                     }
-                                ],
-                                "Variable": {
-                                    "name": "d"
+                                }
+                            }
+                        },
+                        {
+                            "Const": {
+                                "initializer": {
+                                    "Number": 1.0
+                                },
+                                "name": "a"
+                            }
+                        },
+                        {
+                            "Return": {
+                                "value": {
+                                    "Variable": {
+                                        "name": "a"
+                                    }
                                 }
                             }
                         },
@@ -171,7 +196,7 @@
                                 "Assign": {
                                     "name": "d",
                                     "value": {
-                                        "Binary": {
+                                        "Logical": {
                                             "left": {
                                                 "Variable": {
                                                     "name": "a"
@@ -214,6 +239,23 @@
                                     "name": "d",
                                     "value": {
                                         "String": "accept"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Exprstmt": {
+                                "Logical": {
+                                    "left": {
+                                        "Variable": {
+                                            "name": "a"
+                                        }
+                                    },
+                                    "operator": "or",
+                                    "right": {
+                                        "Variable": {
+                                            "name": "b"
+                                        }
                                     }
                                 }
                             }

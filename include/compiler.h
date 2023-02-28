@@ -23,6 +23,7 @@ public:
   void visit(ClassDecl &decl) override;
   void visit(FuncDecl &decl) override;
   void visit(VarDecl &decl) override;
+  void visit(ConstDecl &decl) override;
   void visit(BlockStmt &stmts) override;
   void visit(IfStmt &stmt) override;
   void visit(WhileStmt &stmt) override;

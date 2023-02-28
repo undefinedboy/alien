@@ -170,6 +170,8 @@ void Compiler::visit(VarDecl &decl) {
   }
 }
 
+void Compiler::visit(ConstDecl &decl) {}
+
 void Compiler::visit(BlockStmt &stmts) {
   beginScope();
   for (const auto& stmt : stmts.stmts) {
