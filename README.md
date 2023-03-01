@@ -3,7 +3,6 @@
 ```shell
 # Maybe you need add this line in Makefile if you use macOS Big Sur
 # LDFLAGS := -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
-# Remove TRACE variable in Makefile if you don't need debugging.
 git clone https://github.com/undefinedboy/alien.git
 cd alien && make
 ```
